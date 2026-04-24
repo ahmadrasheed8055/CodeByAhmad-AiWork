@@ -25,19 +25,19 @@ const Resume = () => {
 
         <div className="ml-5 border-l border-border-primary space-y-10">
           <TimelineItem 
-            title="University School of the Arts"
-            period="2007 — 2008"
-            desc="Nemo enims ipsam voluptatem, ydfgtis lueros sitser."
+            title="University of Science and Technology"
+            period="2024 — 2026"
+            desc="Bachelor of Science in Computer Science (BSCS). Focus on advanced software engineering, data structures, and algorithms."
           />
           <TimelineItem 
-            title="Design Academy"
-            period="2006 — 2007"
-            desc="Ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            title="University of Central Punjab"
+            period="2022 — 2024"
+            desc="Associate Degree Program (ADP) in Computer Science. Gained strong foundation in programming and core CS concepts."
           />
           <TimelineItem 
-            title="High School of Art and Design"
-            period="2002 — 2004"
-            desc="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            title="Punjab Group of College"
+            period="2020 — 2022"
+            desc="Intermediate in Computer Science (ICS). Initial exposure to computer science and mathematical foundations."
           />
         </div>
       </section>
@@ -48,36 +48,36 @@ const Resume = () => {
           <div className="w-10 h-10 glass-card flex items-center justify-center shadow-md">
             <Briefcase className="text-accent" size={20} />
           </div>
-          <h3 className="text-2xl font-semibold">Experience</h3>
+          <h3 className="text-2xl font-semibold">Project Experience</h3>
         </div>
 
         <div className="ml-5 border-l border-border-primary space-y-10">
           <TimelineItem 
-            title="Creative Director"
-            period="2015 — Present"
-            desc="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            title="FitMind - Full-Stack Fitness Forum"
+            period="Feb 2025 — Present"
+            desc="Developed a full-stack fitness forum using Angular and ASP.NET Core Web API. Engineered secure Two-Step Email Authentication and integrated AI-based content moderation."
           />
           <TimelineItem 
-            title="Art Director"
-            period="2013 — 2015"
-            desc="Nemo enims ipsam voluptatem, ydfgtis lueros sitser."
+            title="Fancy Tailor - Management System"
+            period="Feb 2024 — March 2024"
+            desc="Digitized traditional tailoring records into a full-stack PHP-based management system. Developed a Dynamic Form Engine for custom measurement fields."
           />
           <TimelineItem 
-            title="Web Designer"
-            period="2010 — 2013"
-            desc="Nemo enims ipsam voluptatem, ydfgtis lueros sitser."
+            title="VotVision - Online Voting Platform"
+            period="Oct 2023 — Jan 2024"
+            desc="Implemented a secure full-stack online voting platform with Authorization based panels. Features real-time result tracking using PHP and MySQL."
           />
         </div>
       </section>
 
       {/* Skills */}
       <section className="space-y-6">
-        <h3 className="text-2xl font-semibold">My Skills</h3>
+        <h3 className="text-2xl font-semibold">Technical Skills</h3>
         <div className="glass-card p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-           <SkillProgress name="Web Design" value={80} />
-           <SkillProgress name="Graphic Design" value={70} />
-           <SkillProgress name="Branding" value={90} />
-           <SkillProgress name="WordPress" value={50} />
+           <SkillProgress name="Angular & TypeScript" value={85} />
+           <SkillProgress name="ASP.NET Core & C#" value={80} />
+           <SkillProgress name="SQL Server & MySQL" value={75} />
+           <SkillProgress name="PHP & Bootstrap" value={70} />
         </div>
       </section>
     </motion.div>

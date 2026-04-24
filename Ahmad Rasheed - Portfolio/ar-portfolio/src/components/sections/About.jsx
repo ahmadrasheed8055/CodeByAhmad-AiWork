@@ -4,24 +4,24 @@ import { motion } from 'framer-motion';
 const About = () => {
   const services = [
     {
-      title: "Web Design",
-      desc: "The most modern and high-quality design made at a professional level.",
+      title: "Full-Stack Development",
+      desc: "Building scalable web applications using Angular and ASP.NET Core MVC/Web API.",
       icon: <Layout className="text-accent" size={40} />
     },
     {
-      title: "Web Development",
-      desc: "High-quality development of sites at the professional level.",
+      title: "Backend Engineering",
+      desc: "Designing and implementing secure RESTful APIs and complex business logic.",
       icon: <Code2 className="text-accent" size={40} />
     },
     {
-      title: "Mobile Apps",
-      desc: "Professional development of applications for iOS and Android.",
-      icon: <Smartphone className="text-accent" size={40} />
+      title: "Database Management",
+      desc: "Efficient database design and optimization using SQL Server and MySQL.",
+      icon: <Globe className="text-accent" size={40} />
     },
     {
-      title: "Photography",
-      desc: "I make high-quality photos of any category at a professional level.",
-      icon: <Globe className="text-accent" size={40} />
+      title: "Modern Technologies",
+      desc: "Utilizing modern tools like TypeScript, C#, and Java to build high-performance SPAs.",
+      icon: <Smartphone className="text-accent" size={40} />
     }
   ];
 
@@ -39,14 +39,15 @@ const About = () => {
 
       <div className="text-text-secondary leading-relaxed space-y-4">
         <p>
-          I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. 
-          I enjoy turning complex problems into simple, beautiful and intuitive designs.
+          I'm a motivated Computer Science Final-Year Student and Full-Stack Developer with hands-on experience 
+          in building scalable web applications. My expertise lies in Angular and ASP.NET Core MVC/Web API, 
+          with a strong foundation in RESTful APIs and modern web technologies.
         </p>
         <p>
-          My job is to build your website so that it is functional and user-friendly but at the same time attractive. 
-          Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. 
-          My aim is to bring across your message and identity in the most creative way. 
-          I created web design for many famous brand companies.
+          I'm skilled in developing responsive Single Page Applications (SPAs), implementing secure authentication, 
+          and writing clean, maintainable code. I enjoy turning complex problems into simple, beautiful, 
+          and intuitive digital solutions. My goal is to contribute to real-world projects while 
+          continuously learning from experienced teams.
         </p>
       </div>
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Smartphone, Calendar, MapPin, Facebook, Twitter, Instagram, ChevronDown } from 'lucide-react';
+import { Mail, Smartphone, MapPin, Globe, ChevronDown } from 'lucide-react';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,12 +9,12 @@ const Sidebar = () => {
       {/* Profile Info */}
       <div className="flex flex-row lg:flex-col items-center lg:text-center w-full relative">
         <div className="w-20 h-20 lg:w-32 lg:h-32 bg-border-primary rounded-2xl lg:rounded-3xl overflow-hidden mb-0 lg:mb-5 shrink-0">
-            <img src="/src/assets/hero.png" alt="Ahmad Faraz" className="w-full h-full object-cover" />
+            <img src="/src/assets/hero.png" alt="Ahmad Rasheed" className="w-full h-full object-cover" />
         </div>
         <div className="ml-5 lg:ml-0 flex-1">
-          <h1 className="text-xl lg:text-2xl font-semibold mb-2 tracking-tight">Ahmad Faraz</h1>
+          <h1 className="text-xl lg:text-2xl font-semibold mb-2 tracking-tight">Ahmad Rasheed</h1>
           <div className="bg-border-primary/50 px-3 lg:px-4 py-1 rounded-lg text-[10px] lg:text-xs font-medium text-text-secondary w-fit lg:mx-auto">
-            Web developer
+            Full-Stack Developer
           </div>
         </div>
 
@@ -36,22 +36,17 @@ const Sidebar = () => {
           <ContactItem 
             icon={<Mail size={18} className="text-accent" />} 
             label="EMAIL" 
-            value="ahmad@example.com" 
+            value="ahmad.r.tec@gmail.com" 
           />
           <ContactItem 
             icon={<Smartphone size={18} className="text-accent" />} 
             label="PHONE" 
-            value="+1 (213) 352-2795" 
-          />
-          <ContactItem 
-            icon={<Calendar size={18} className="text-accent" />} 
-            label="BIRTHDAY" 
-            value="June 23, 1982" 
+            value="+92 337 6018055" 
           />
           <ContactItem 
             icon={<MapPin size={18} className="text-accent" />} 
             label="LOCATION" 
-            value="Sacramento, California, USA" 
+            value="Lahore, Pakistan" 
           />
         </div>
 
@@ -59,9 +54,7 @@ const Sidebar = () => {
 
         {/* Social Links */}
         <div className="flex justify-center gap-4 lg:mt-8">
-          <SocialLink href="#" icon={<Facebook size={18} />} />
-          <SocialLink href="#" icon={<Twitter size={18} />} />
-          <SocialLink href="#" icon={<Instagram size={18} />} />
+          <SocialLink href="https://github.com/ahmadrasheed8055" icon={<Globe size={18} />} />
         </div>
       </div>
     </aside>

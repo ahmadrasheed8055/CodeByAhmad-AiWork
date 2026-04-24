@@ -5,20 +5,32 @@ import { Eye } from 'lucide-react';
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
 
-  const categories = ['All', 'Web design', 'Applications', 'Web development'];
+  const categories = ['All', 'Full-Stack', 'Angular', 'PHP'];
   
   const projects = [
-    { title: "Finance", category: "Web development", image: "https://picsum.photos/400/300?random=1" },
-    { title: "Orizon", category: "Web design", image: "https://picsum.photos/400/300?random=2" },
-    { title: "Fundo", category: "Applications", image: "https://picsum.photos/400/300?random=3" },
-    { title: "Brawlhalla", category: "Applications", image: "https://picsum.photos/400/300?random=4" },
-    { title: "DSM.", category: "Web design", image: "https://picsum.photos/400/300?random=5" },
-    { title: "MetaMask", category: "Web design", image: "https://picsum.photos/400/300?random=6" },
+    { 
+      title: "FitMind", 
+      category: "Angular", 
+      image: "https://picsum.photos/400/300?random=1",
+      desc: "Full-stack fitness forum with 2FA and AI moderation."
+    },
+    { 
+      title: "Fancy Tailor", 
+      category: "PHP", 
+      image: "https://picsum.photos/400/300?random=2",
+      desc: "Tailor management system with dynamic form engine."
+    },
+    { 
+      title: "VotVision", 
+      category: "PHP", 
+      image: "https://picsum.photos/400/300?random=3",
+      desc: "Secure online voting platform with real-time tracking."
+    }
   ];
 
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(p => p.category.toLowerCase() === filter.toLowerCase());
+    : projects.filter(p => p.category.toLowerCase() === filter.toLowerCase() || (filter === 'full-stack'));
 
   return (
     <motion.div 
@@ -51,7 +63,7 @@ const Portfolio = () => {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <motion.div
               layout
               initial={{ opacity: 0, scale: 0.9 }}
