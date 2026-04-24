@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Smartphone, MapPin, Globe, ChevronDown } from 'lucide-react';
+import { Mail, Smartphone, MapPin, Globe, ChevronDown, Linkedin, Github, FileText } from 'lucide-react';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +38,21 @@ const Sidebar = () => {
             label="EMAIL" 
             value="ahmad.r.tec@gmail.com" 
           />
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 glass-card flex items-center justify-center shrink-0 shadow-lg">
+              <FileText size={18} className="text-accent" />
+            </div>
+            <div className="overflow-hidden">
+              <p className="text-[10px] text-text-secondary/60 uppercase tracking-wider">RESUME</p>
+              <a 
+                href="/AhmadRasheed_Intern_Resume.pdf" 
+                download="AhmadRasheed_Resume.pdf"
+                className="text-sm text-accent hover:underline decoration-accent/30"
+              >
+                Download PDF
+              </a>
+            </div>
+          </div>
           <ContactItem 
             icon={<Smartphone size={18} className="text-accent" />} 
             label="PHONE" 
@@ -54,7 +69,8 @@ const Sidebar = () => {
 
         {/* Social Links */}
         <div className="flex justify-center gap-4 lg:mt-8">
-          <SocialLink href="https://github.com/ahmadrasheed8055" icon={<Globe size={18} />} />
+          <SocialLink href="https://github.com/ahmadrasheed8055" icon={<Github size={18} />} />
+          <SocialLink href="https://www.linkedin.com/in/ahmad-rasheed-a51740274/" icon={<Linkedin size={18} />} />
         </div>
       </div>
     </aside>
