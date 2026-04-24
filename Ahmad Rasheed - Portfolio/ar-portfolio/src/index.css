@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-body: #121212;
+  --color-bg-card: #1e1e1f;
+  --color-border-primary: #383838;
+  --color-accent: #ffdb70;
+  --color-text-main: #fafafa;
+  --color-text-secondary: #d6d6d6;
+
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-body text-text-main font-poppins;
+  }
+
+  /* Custom Scrollbar for the dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-body;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-primary rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-bg-card border border-border-primary rounded-3xl;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-linear-to-br from-accent to-amber-500;
+  }
+}
