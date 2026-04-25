@@ -17,7 +17,7 @@ const Contact = () => {
       {/* Map Placeholder */}
       <div className="w-full h-[400px] glass-card overflow-hidden grayscale invert">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334133464!3d38.561654597395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6fbc4d1b7132!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1645564656556!5m2!1sen!2s" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217759.99380853772!2d74.174433!3d31.482635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919019906410049%3A0xe54d68246e494a8c!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1713960000000!5m2!1sen!2s" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 

@@ -15,12 +15,10 @@ function App() {
     switch (activeSection) {
       case 'about':
         return <About key="about" />;
-      case 'resume':
+      case 'projects':
         return <Resume key="resume" />;
-      case 'portfolio':
+      case 'education':
         return <Portfolio key="portfolio" />;
-      case 'blog':
-        return <Blog key="blog" />;
       case 'contact':
         return <Contact key="contact" />;
       default:

@@ -1,5 +1,5 @@
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const navItems = ['About', 'Resume', 'Portfolio', 'Blog', 'Contact'];
+  const navItems = ['About', 'Projects', 'Education', 'Contact'];
 
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-[#2b2b2c]/80 backdrop-blur-md border-t border-border-primary px-4 py-3 z-50 lg:absolute lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:w-fit lg:rounded-bl-3xl lg:rounded-tr-3xl lg:border-t-0 lg:border-l lg:border-b lg:px-10 lg:py-6">
