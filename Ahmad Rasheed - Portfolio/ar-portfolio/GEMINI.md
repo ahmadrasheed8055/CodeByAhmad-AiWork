@@ -9,11 +9,19 @@
 - **ESLint**: Linting and code quality tool.
 - **Vanilla CSS**: Used for styling (`index.css`, `App.css`).
 
-### Architecture
-- **Entry Point**: `src/main.jsx` initializes the React application.
-- **Main Component**: `src/App.jsx` serves as the primary layout and component container.
-- **Assets**: Static assets like images and SVGs are stored in `src/assets/` and `public/`.
-- **Public Assets**: Includes a global `icons.svg` sprite sheet for consistent iconography.
+### Design Rules
+- **Contrast & Readability**: Maintain strong contrast between text and background.
+- **Modern Aesthetic**: Follow a clean, minimal, modern dark UI aesthetic.
+- **Consistency**: Ensure all components (Sidebar, Navbar, Sections) use the same variable mapping.
+- **Transitions**: Use the accent color for smooth hover and active state transitions.
+
+### Color Palette
+- **Main Background:** #090D11
+- **Card Background:** #131c24
+- **Accent Color:** #7699B7
+- **Border Color:** #1E2C38
+- **Primary Text:** #fafafa
+- **Secondary Text:** #d6d6d6
 
 ## Building and Running
 The following commands are defined in `package.json` for development and production:
@@ -24,26 +32,4 @@ The following commands are defined in `package.json` for development and product
 | `npm run build` | Builds the project for production (output to `dist/`). |
 | `npm run lint` | Runs ESLint to check for code quality issues. |
 | `npm run preview` | Previews the production build locally. |
-
-## Development Conventions
-
-### Coding Style
-- **ESM**: The project uses ECMAScript Modules (`"type": "module"`).
-- **JSX**: Components are written in `.jsx` files.
-- **Functional Components**: React hooks (e.g., `useState`) are used in functional components.
-
-### Asset Management
-- **Images**: Import images in `.jsx` files from the `assets` folder (e.g., `import heroImg from './assets/hero.png'`).
-- **Icons**: SVG icons are managed via a sprite sheet in `public/icons.svg`. Use them with the `<use>` tag:
-  ```html
-  <svg className="icon">
-    <use href="/icons.svg#icon-id"></use>
-  </svg>
-  ```
-
-### Styling
-- Global styles are located in `src/index.css`.
-- Component-specific styles are located in `src/App.css`.
-
-### Linting
-- Configuration is located in `eslint.config.js`. Ensure all code passes `npm run lint` before committing.
+...

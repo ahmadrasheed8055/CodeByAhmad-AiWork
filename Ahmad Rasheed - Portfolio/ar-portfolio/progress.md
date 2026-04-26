@@ -5,24 +5,24 @@
 - **Tailwind CSS 4 Integration**: Configured the latest Tailwind CSS with a custom premium theme.
 - **Premium Design System**: 
     - Applied a "vCard" dashboard layout.
-    - Implemented a "Glassmorphism" aesthetic with deep charcoal backgrounds (`#121212`) and amber/gold accents (`#ffdb70`).
-    - Integrated **Framer Motion** for smooth section transitions.
+    - Implemented a "Glassmorphism" aesthetic with deep charcoal backgrounds and amber/gold accents.
+    - **Color Conversion**: Successfully transitioned the entire site to a new palette: Tan (#D6C6A2), Gold (#B58E31), Light Gray (#AAADB2), Muted Blue (#60697A), and Deep Navy (#313C52).
 - **Component Architecture**: 
-    - Built a responsive `Sidebar` with mobile toggle functionality.
-    - Created a dynamic `Navbar` for seamless section switching.
-    - Developed core sections: `About`, `Resume`, `Portfolio`, `Blog`, and `Contact`.
-- **Bug Fixes**: Resolved critical `lucide-react` versioning issues and Vite dependency caching errors that caused a "black screen."
-- **Content Personalization**: Updated all sections with Ahmad Rasheed's resume details, including Education, Projects, and Skills.
+    - Built a responsive `Sidebar` with mobile toggle functionality and updated profile image.
+    - Created a dynamic `Navbar` with updated sections: About, Projects, Education, and Contact.
+    - Developed core sections: `About`, `Projects` (merged Resume/Experience), `Education` (academic history), and `Contact` (updated with Lahore map).
+- **Content Personalization**: Fully updated with Ahmad Rasheed's professional details, including project experience and technical skills.
+- **Resource Integration**: Integrated a downloadable PDF resume and direct social links (GitHub, LinkedIn).
 
 ## 📚 Lessons Learned
-- **Library Versioning**: Using extremely old versions of libraries (like `lucide-react` 1.x) can lead to `SyntaxErrors` if newer icon exports are expected. Always verify the latest stable version.
-- **Vite Cache Management**: When swapping library versions, deleting the `node_modules/.vite` directory is essential to prevent the browser from loading stale, pre-bundled modules.
-- **Tailwind 4 Config**: Tailwind 4 simplifies configuration by moving most settings directly into the CSS file using the `@theme` block.
+- **Theming with Tailwind 4**: Using the `@theme` block in CSS simplifies global color management.
+- **Responsive Layouts**: Absolute positioning for mobile toggle buttons requires careful z-index and spacing management.
+- **Metadata Management**: Consistency between `index.html` titles and component content is key for professional branding.
 
 ## 📝 To-Do / Next Steps
-- [x] **Content Personalization**: Replace placeholder text in `About.jsx` and `Resume.jsx` with actual professional details.
-- [x] **Project Gallery**: Update `Portfolio.jsx` with real project screenshots and links.
-- [ ] **Contact Form Logic**: Integrate a service like EmailJS or a backend to make the contact form functional.
-- [x] **SEO & Metadata**: Update `index.html` with proper meta tags and a favicon.
-- [ ] **Deployment**: Prepare the build for hosting (e.g., Vercel, Netlify, or Firebase).
-- [ ] **Dark/Light Mode**: (Optional) Add a theme toggle for enhanced accessibility.
+- [x] **Content Personalization**: Replace placeholder text with actual professional details.
+- [x] **Project Gallery**: Update with real projects and descriptions.
+- [ ] **Contact Form Logic**: Integrate EmailJS or a backend for functional messaging.
+- [x] **SEO & Metadata**: Finalize `index.html` meta tags.
+- [ ] **Deployment**: Prepare for production hosting (Vercel/Netlify).
+- [ ] **Visual Assets**: Replace placeholder project images with real screenshots.
