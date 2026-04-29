@@ -15,8 +15,8 @@ const Hero = () => {
           </span>
           
           <h1 className="text-[10vw] md:text-[8vw] leading-[0.9] mb-8 tracking-tight">
-            MUBARRAH <br />
-            <span className="serif-italic text-primary lowercase">Nusrat.</span>
+            MUBRRAH <br />
+            <span className="serif-italic text-primary lowercase">CH.</span>
           </h1>
         </motion.div>
 

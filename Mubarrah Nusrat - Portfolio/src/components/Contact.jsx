@@ -42,7 +42,7 @@ const Contact = () => {
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
             Available for new projects
           </div>
-          <div className="text-black">© 2026 Mubarrah Nusrat</div>
+          <div className="text-black">© 2026 Mubrrah CH</div>
           <a href="#" className="hover:text-primary transition-colors">Back to top ↑</a>
         </footer>
       </div>
