@@ -1,5 +1,6 @@
-import React from 'react';
 import { Mail, MessageCircle, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { portfolioData } from '../data/portfolio';
 
 const Contact = () => {
   return (
@@ -13,29 +14,51 @@ const Contact = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <a href="mailto:mubrrahch@gmail.com" className="glass-card p-10 rounded-3xl group hover:bg-black transition-colors duration-500">
+          <motion.a 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            href={`mailto:${portfolioData.email}`} 
+            className="glass-card p-10 rounded-3xl group hover:bg-black transition-colors duration-500"
+          >
             <span className="text-[10px] uppercase tracking-widest text-zinc-400 block mb-6 font-bold group-hover:text-zinc-500 transition-colors">Email Inquiry</span>
             <div className="flex items-center justify-between">
-              <span className="text-lg font-medium tracking-tight text-black group-hover:text-black transition-colors">mubrrahch@gmail.com</span>
-              <Mail size={20} className="text-primary group-hover:text-black transition-colors" />
+              <span className="text-lg font-medium tracking-tight text-black group-hover:text-white transition-colors">{portfolioData.email}</span>
+              <Mail size={20} className="text-primary group-hover:text-white transition-colors" />
             </div>
-          </a>
+          </motion.a>
           
-          <a href="https://wa.me/923121613548" className="glass-card p-10 rounded-3xl group hover:bg-black transition-colors duration-500">
+          <motion.a 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            href={portfolioData.whatsapp} 
+            className="glass-card p-10 rounded-3xl group hover:bg-black transition-colors duration-500"
+          >
             <span className="text-[10px] uppercase tracking-widest text-zinc-400 block mb-6 font-bold group-hover:text-zinc-500 transition-colors">Direct Message</span>
             <div className="flex items-center justify-between">
-              <span className="text-lg font-medium tracking-tight text-black group-hover:text-black transition-colors">+92 312 1613548</span>
-              <MessageCircle size={20} className="text-primary group-hover:text-black transition-colors" />
+              <span className="text-lg font-medium tracking-tight text-black group-hover:text-white transition-colors">{portfolioData.phone}</span>
+              <MessageCircle size={20} className="text-primary group-hover:text-white transition-colors" />
             </div>
-          </a>
+          </motion.a>
 
-          <a href="https://www.linkedin.com/in/mubrrah-ch" target="_blank" rel="noopener noreferrer" className="glass-card p-10 rounded-3xl group  duration-500">
+          <motion.a 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            href={portfolioData.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="glass-card p-10 rounded-3xl group hover:bg-black transition-colors duration-500"
+          >
             <span className="text-[10px] uppercase tracking-widest text-zinc-400 block mb-6 font-bold group-hover:text-zinc-500 transition-colors">LinkedIn Profile</span>
             <div className="flex items-center justify-between">
-              <span className="text-lg font-medium tracking-tight text-black group-hover:text-black transition-colors">Mubrrah CH</span>
-              <ExternalLink size={20} className="text-primary group-hover:text-black transition-colors" />
+              <span className="text-lg font-medium tracking-tight text-black group-hover:text-white transition-colors">Mubrrah CH</span>
+              <ExternalLink size={20} className="text-primary group-hover:text-white transition-colors" />
             </div>
-          </a>
+          </motion.a>
         </div>
 
         <footer className="mt-40 pt-16 border-t border-accent/20 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.4em] font-black text-zinc-400">
@@ -43,8 +66,8 @@ const Contact = () => {
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
             Available for new projects
           </div>
-          <div className="text-black font-bold">© 2026 Mubrrah CH</div>
-          <a href="#" className="hover:text-primary transition-colors">Back to top ↑</a>
+          <div className="text-black font-bold">© 2026 {portfolioData.name}</div>
+          <a href="#about" className="hover:text-primary transition-colors">Back to top ↑</a>
         </footer>
       </div>
     </section>

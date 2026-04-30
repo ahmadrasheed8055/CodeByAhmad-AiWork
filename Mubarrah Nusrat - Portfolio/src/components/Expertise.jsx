@@ -1,14 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-
-const skills = [
-  { title: "Email Marketing", desc: "Crafting optimized campaigns that drive higher open rates and customer retention." },
-  { title: "Digital Strategy", desc: "Building comprehensive marketing roadmaps tailored for business growth." },
-  { title: "Social Presence", desc: "Enhancing brand visibility through strategic social media management." },
-  { title: "Paid Acquisition", desc: "Data-driven Google and Facebook Ads optimization for measurable ROI." },
-  { title: "Data Precision", desc: "Ensuring accuracy and efficiency in data management and task execution." },
-  { title: "Security Aware", desc: "Applying cybersecurity best practices to protect digital assets." },
-];
+import { portfolioData } from '../data/portfolio';
 
 const Expertise = () => {
   return (
@@ -24,9 +15,13 @@ const Expertise = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+          {portfolioData.skills.map((skill, index) => (
             <motion.div 
               key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
               whileHover={{ y: -10 }}
               className="glass-card p-10 rounded-2xl flex flex-col justify-between aspect-[4/3] group transition-all duration-500"
             >

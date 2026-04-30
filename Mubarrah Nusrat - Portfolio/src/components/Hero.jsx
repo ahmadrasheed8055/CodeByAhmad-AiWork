@@ -1,9 +1,9 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import { portfolioData } from '../data/portfolio';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen pt-40 pb-20 px-6 md:px-12 flex flex-col justify-center">
+    <section id="about" className="relative min-h-screen pt-40 pb-20 px-6 md:px-12 flex flex-col justify-center">
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -11,12 +11,12 @@ const Hero = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="text-xs uppercase tracking-[0.4em] mb-6 block text-primary font-bold">
-            Digital Strategy & Marketing
+            {portfolioData.title}
           </span>
           
           <h1 className="text-[10vw] md:text-[8vw] leading-[0.9] mb-8 tracking-tight">
-            MUBRRAH <br />
-            <span className="serif-italic text-primary lowercase">CH.</span>
+            {portfolioData.name.split(' ')[0]} <br />
+            <span className="serif-italic text-primary lowercase">{portfolioData.name.split(' ')[1]}.</span>
           </h1>
         </motion.div>
 

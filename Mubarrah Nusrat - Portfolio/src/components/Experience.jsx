@@ -1,20 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-
-const experiences = [
-  {
-    role: "Email Marketing Specialist",
-    company: "Strategy & Growth (Remote)",
-    period: "2022 - Present",
-    desc: "Driving engagement through personalized automation and data-driven segmentation."
-  },
-  {
-    role: "Educational Mentor",
-    company: "Beaconhouse & LACAS",
-    period: "2020 - Present",
-    desc: "Fostering academic growth and designing engaging curricula for future leaders."
-  }
-];
+import { portfolioData } from '../data/portfolio';
 
 const Experience = () => {
   return (
@@ -28,11 +13,12 @@ const Experience = () => {
         </div>
 
         <div className="space-y-0">
-          {experiences.map((exp, index) => (
+          {portfolioData.experiences.map((exp, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
               className="group py-16 border-b border-accent/30 grid grid-cols-1 md:grid-cols-12 gap-8 items-center hover:bg-[#F5EBE0]/20 transition-all duration-500 px-8 -mx-8 rounded-2xl"
             >
