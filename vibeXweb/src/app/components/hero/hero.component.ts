@@ -328,10 +328,36 @@ import { CommonModule } from '@angular/common';
       .screen-frame { width: 440px; height: 280px; }
     }
     @media (max-width: 992px) {
-      .container { grid-template-columns: 1fr; text-align: center; }
+      .hero { padding: 120px 0 80px; }
+      .container { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
       .subheadline { margin: 0 auto 3rem; }
       .hero-btns { display: flex; justify-content: center; }
       .screen-frame { margin: 0 auto; }
+      .floating-card.stat-1 { left: 0; }
+      .floating-card.stat-2 { right: 0; }
+    }
+    @media (max-width: 576px) {
+      .hero { padding: 100px 0 60px; }
+      .screen-frame { 
+        width: 300px; 
+        height: 190px; 
+        border-width: 8px;
+        border-radius: 16px;
+      }
+      .monitor-wrapper {
+        transform: rotateY(-10deg) rotateX(5deg);
+      }
+      .side-panel { width: 40px; padding-top: 10px; gap: 15px; }
+      .logo-circle { width: 20px; height: 20px; }
+      .nav-dot { width: 10px; height: 10px; }
+      .dash-body { padding: 10px; gap: 8px; }
+      .card { padding: 8px; border-radius: 8px; }
+      .card.wide { height: 70px; }
+      .chart-area { height: 40px; }
+      .card.small { height: 50px; }
+      .value { font-size: 0.8rem; }
+      .floating-card { padding: 8px 12px; font-size: 0.7rem; border-radius: 10px; }
+      .stat-2 { bottom: 20px; }
     }
   `]
 })

@@ -74,6 +74,52 @@ import { CommonModule } from '@angular/common';
       display: flex;
       gap: 0.75rem;
     }
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+        flex-direction: column;
+        gap: 1.25rem;
+        text-align: center;
+      }
+      .navbar {
+        position: relative;
+        padding: 1.25rem 0;
+        background: rgba(10, 14, 20, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .nav-actions {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column-reverse;
+        gap: 1rem;
+      }
+      .social-links {
+        gap: 0.5rem;
+      }
+      .social-icon {
+        width: 36px;
+        height: 36px;
+      }
+      .logo {
+        font-size: 1.5rem;
+      }
+      .contact-btn {
+        width: 100%;
+        padding: 0.6rem 1.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .social-links {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+        gap: 8px;
+      }
+      .social-icon {
+        width: 100%;
+      }
+    }
     .social-icon {
       color: rgba(255, 255, 255, 0.5);
       width: 40px;

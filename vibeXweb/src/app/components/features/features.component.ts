@@ -99,9 +99,12 @@ import { CommonModule } from '@angular/common';
       }
     }
     @media (max-width: 768px) {
+      .features { padding: 60px 0; }
+      .container { padding: 0 1.5rem; }
       .features-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
       }
       .icon-box {
         margin: 0 auto 1.5rem;

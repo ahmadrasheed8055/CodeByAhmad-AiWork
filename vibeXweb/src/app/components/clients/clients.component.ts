@@ -56,9 +56,13 @@ import { CommonModule } from '@angular/common';
       color: var(--text-main);
     }
     @media (max-width: 768px) {
+      .clients { padding: 40px 0; }
+      .trusted-text { text-align: center; margin-bottom: 2.5rem; }
       .logos-grid {
         justify-content: center;
+        gap: 1.5rem;
       }
+      .logo-item { font-size: 1rem; }
     }
   `]
 })
