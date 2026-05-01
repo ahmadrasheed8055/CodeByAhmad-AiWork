@@ -20,10 +20,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('vibex-web');
   });
 
-  it('should render title', () => {
+  it('should render navbar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, vibex-web');
+    expect(compiled.querySelector('app-navbar')).toBeTruthy();
   });
 });

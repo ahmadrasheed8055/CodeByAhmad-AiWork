@@ -26,4 +26,6 @@ import { FeaturesComponent } from './components/features/features.component';
     }
   `]
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'vibex-web';
+}
