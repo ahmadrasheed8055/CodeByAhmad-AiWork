@@ -1,5 +1,5 @@
 export const portfolioData = {
-  name: "Mubarrah CH",
+  name: "Mubrrah CH",
   title: "Digital Strategy & Marketing Expert",
   email: "mubrrahch@gmail.com",
   phone: "+92 312 1613548",
