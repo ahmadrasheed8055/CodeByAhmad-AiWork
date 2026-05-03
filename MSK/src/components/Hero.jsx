@@ -5,17 +5,12 @@ const Hero = () => {
   return (
     <section id="home" className="hero-section">
       <div className="hero-video-container">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          preload="auto"
-          className="hero-video-element"
-        >
-          <source src="/msk-hero-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe 
+          src="https://www.youtube.com/embed/vyPRmznUpks?autoplay=1&mute=1&loop=1&playlist=vyPRmznUpks&controls=0&showinfo=0&rel=0&start=31" 
+          className="hero-video-iframe"
+          allow="autoplay; encrypted-media"
+          title="MSK Hero Video"
+        ></iframe>
         <div className="hero-video-overlay"></div>
       </div>
       
