@@ -1,0 +1,138 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark);
+}
+
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05); /* Slight zoom for edges */
+  animation: videoZoom 20s infinite alternate linear;
+}
+
+@keyframes videoZoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.15); }
+}
+
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(15, 23, 42, 0.784) 0%,
+    rgb(15, 23, 42) 100%
+  );
+  z-index: 2;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hero-content {
+  max-width: 850px;
+  text-align: center;
+  color: var(--white);
+  padding: 0 24px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.accent-text {
+  color: var(--primary);
+  display: block;
+  font-size: clamp(3.5rem, 12vw, 7.5rem);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--primary-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  opacity: 0.9;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.hero-action-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-large {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--dark);
+}
+
+@media (max-width: 768px) {
+  .hero-action-btns {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    margin-bottom: 15px;
+  }
+  
+  .hero-subtitle {
+    margin-bottom: 20px;
+  }
+}

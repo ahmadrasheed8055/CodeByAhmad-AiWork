@@ -1,0 +1,113 @@
+.contact-section {
+  background-color: var(--bg-light);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.contact-info-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.shop-header h3 {
+  font-size: 1.75rem;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.shop-header p {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.info-card-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.icon-box {
+  width: 44px;
+  height: 44px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.info-card-item h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: var(--dark);
+}
+
+.info-card-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: var(--white);
+  margin-top: auto;
+  width: 100%;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+}
+
+.map-container {
+  height: 500px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid var(--white);
+}
+
+@media (max-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-container {
+    height: 400px;
+    order: -1;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-info-card {
+    padding: 30px 20px;
+  }
+}

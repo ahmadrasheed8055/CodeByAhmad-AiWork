@@ -1,0 +1,141 @@
+.testimonials {
+  background-color: var(--bg-light);
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonial-slider {
+  flex: 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-slide {
+  flex: 0 0 100%;
+  padding: 10px;
+}
+
+.review-card {
+  background: var(--white);
+  padding: 50px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  position: relative;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.quote-icon {
+  font-size: 2.5rem;
+  color: var(--primary-light);
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  opacity: 0.5;
+}
+
+.rating {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.star-icon {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.comment {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--text-main);
+  margin-bottom: 30px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.user-info h4 {
+  color: var(--dark);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.user-info span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.slider-btn {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--dark);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.slider-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: scale(1.1);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background: var(--primary);
+  width: 30px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .slider-btn {
+    display: none;
+  }
+  
+  .review-card {
+    padding: 40px 24px;
+  }
+  
+  .quote-icon {
+    font-size: 1.8rem;
+    top: 20px;
+    left: 20px;
+  }
+}
