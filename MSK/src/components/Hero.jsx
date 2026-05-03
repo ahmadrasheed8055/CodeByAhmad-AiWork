@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/Hero.css';
 
 const Hero = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Set the start time to 30 seconds
+      videoRef.current.currentTime = 30;
+    }
+  }, []);
+
   return (
     <section id="home" className="hero-section">
       <div className="hero-video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/vyPRmznUpks?autoplay=1&mute=1&loop=1&playlist=vyPRmznUpks&controls=0&showinfo=0&rel=0&start=31" 
-          className="hero-video-iframe"
-          allow="autoplay; encrypted-media"
-          title="MSK Hero Video"
-        ></iframe>
+        <video 
+          ref={videoRef}
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          preload="auto"
+          className="hero-video-element"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        >
+          <source src="/hero-video.mp4#t=30" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="hero-video-overlay"></div>
       </div>
       
