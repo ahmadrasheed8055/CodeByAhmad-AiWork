@@ -37,7 +37,7 @@ const Hero = () => {
           </h1>
           <h2 className="hero-subtitle">Premium Smartphone Solutions</h2>
           <p className="hero-description">
-            Expert repairing services and high-end accessories at Hall Road, Lahore. 
+            Expert repairing services and high-end accessories at MSK Mobile Shop, Lahore. 
             We bring your devices back to life with professional care.
           </p>
           <div className="hero-action-btns">
