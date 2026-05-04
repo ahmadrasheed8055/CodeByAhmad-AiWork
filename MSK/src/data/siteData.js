@@ -8,6 +8,7 @@
  * 4. Update the 'id' to the next number and change the name, price, and image.
  * 
  * IMAGE TIPS: You can use local images from public/assets/ or links from Unsplash.
+ * copy the image URL and paste it in the 'image' field. Make sure to use high-quality images for better appearance.
  */
 
 export const siteData = {
@@ -15,7 +16,7 @@ export const siteData = {
   socials: [
     { name: 'Facebook', url: 'https://facebook.com', icon: 'Fb' },
     { name: 'Instagram', url: 'https://instagram.com', icon: 'Insta' },
-    { name: 'WhatsApp', url: 'https://wa.me/1234567890', icon: 'Wa' },
+    { name: 'WhatsApp', url: 'https://wa.me/+923066208899', icon: 'Wa' },
   ],
 
   // Mobile Repairing Services Section
@@ -25,28 +26,28 @@ export const siteData = {
       id: 1,
       title: "Screen Replacement",
       description: "High-quality original and compatible screen replacements for all major brands.",
-      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1611396000732-f8c9a933424f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "Starts from $20"
     },
     {
       id: 2,
       title: "Battery Replacement",
       description: "Fast-draining battery? Get a premium replacement with warranty.",
-      image: "https://images.unsplash.com/photo-1601524909162-cd8725f25e71?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=400",
       price: "Starts from $15"
     },
     {
       id: 3,
       title: "Charging Port Repair",
       description: "Fix loose or non-functional charging ports instantly.",
-      image: "https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=400",
       price: "Starts from $10"
     },
     {
       id: 4,
       title: "Water Damage Repair",
       description: "Professional cleaning and component-level repair for liquid damage.",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=400",
       price: "Free Diagnosis"
     }
   ],
@@ -96,14 +97,14 @@ export const siteData = {
     },
     {
       id: 2,
-      user: "Sarah Johnson",
-      rating: 4,
-      comment: "Great collection of accessories at very reasonable prices. The staff is very professional.",
+      user: "Fatima Zahra",
+      rating: 5,
+      comment: "Bohat hi shandar service hai, inke paas mobile accessories ki behtreen variety munasib qeemat mein mojud hai.",
       date: "1 week ago"
     },
     {
       id: 3,
-      user: "Michael Smith",
+      user: "Muhammad Bilal",
       rating: 5,
       comment: "The only place I trust for my mobile repairs. Honest pricing and genuine parts.",
       date: "2 weeks ago"
@@ -112,10 +113,10 @@ export const siteData = {
 
   // Contact Information
   contact: {
-    address: "Hall Road, Lahore, Punjab 54000, Pakistan",
-    phone: "+92 300 1234567",
-    email: "contact@mskmobile.com",
+    address: "MSK Mobile Store, Bedian Road, Lahore, Pakistan",
+    phone: "+92 306 6208899",
+    email: "msa.khan620@gmail.com",
     openingHours: "Mon - Sat: 10:00 AM - 10:00 PM",
-    mapLocation: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.9134440523!2d74.3184343!3d31.56499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b4277732247%3A0xe549557b70216440!2sHall%20Rd%2C%20Lahore%2C%20Punjab!5e0!3m2!1sen!2spk!4v1714750000000!5m2!1sen!2spk"
+    mapLocation: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.043210112345!2d74.4201223!3d31.4837605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190f0652ace1c3%3A0xd9673e00ac792656!2sMSK%20Mobile%20Shop%20%2F%20Online%20Store!5e0!3m2!1sen!2spk!4v1714750000000!5m2!1sen!2spk"
   }
 };
