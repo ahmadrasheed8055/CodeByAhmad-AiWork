@@ -46,12 +46,14 @@ const Navbar = () => {
           </a>
         </div>
         
+        {/* List of Navigation Links */}
         <ul className="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#repairs">Repairing</a></li>
           <li><a href="#accessories">Accessories</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#contact">Contact</a></li>
+          {/* <li><a href="#mobiles">Mobiles</a></li> */}
         </ul>
 
         <div className="nav-right">
@@ -82,7 +84,7 @@ const Navbar = () => {
           </div>
 
           <a href={`tel:${siteData.contact.phone}`} className="nav-cta-btn desktop-only">
-            <FaPhone /> <span>Book Repair</span>
+            <span>Book Repair</span> <FaPhone />
           </a>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaMapMarkerAlt, FaClock, FaWhatsapp } from 'react-icons/fa';
 import { siteData } from '../data/siteData';
 import '../styles/ContactSection.css';
 
