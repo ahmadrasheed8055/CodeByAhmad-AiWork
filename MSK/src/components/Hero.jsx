@@ -42,7 +42,7 @@ const Hero = () => {
           </p>
           <div className="hero-action-btns">
             <a href="#repairs" className="btn btn-primary btn-large">Our Services</a>
-            <a href="#contact" className="btn btn-outline btn-large">Find Our Shop</a>
+            <a href="#contact" className="btn btn-outline btn-large">Find Our Store</a>
           </div>
         </div>
       </div>

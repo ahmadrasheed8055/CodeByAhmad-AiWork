@@ -8,7 +8,7 @@ const ContactSection = () => {
     <section id="contact" className="contact-section">
       <div className="container">
         <div className="section-title">
-          <h2>Visit Our Shop</h2>
+          <h2>Visit Our Store</h2>
           <p>We are located in the heart of Lahore's mobile market. Stop by for expert repairs and premium accessories.</p>
         </div>
         
