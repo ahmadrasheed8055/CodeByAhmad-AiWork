@@ -9,13 +9,15 @@
  * 
  * IMAGE TIPS: You can use local images from public/assets/ or links from Unsplash.
  * copy the image URL and paste it in the 'image' field. Make sure to use high-quality images for better appearance.
+ * 
+ * update under the double quoutes only ("") and keep the structure intact for the website to work properly.
  */
 
 export const siteData = {
   // Navigation Social Links
   socials: [
-    { name: 'Facebook', url: 'https://facebook.com', icon: 'Fb' },
-    { name: 'Instagram', url: 'https://instagram.com', icon: 'Insta' },
+    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61583561695294', icon: 'Fb' },
+    { name: 'Instagram', url: 'https://www.instagram.com/msk.shop01/', icon: 'Insta' },
     { name: 'WhatsApp', url: 'https://wa.me/+923066208899', icon: 'Wa' },
   ],
 
@@ -29,27 +31,29 @@ export const siteData = {
       image: "https://images.unsplash.com/photo-1611396000732-f8c9a933424f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "Starts from $20"
     },
+
     {
       id: 2,
       title: "Battery Replacement",
       description: "Fast-draining battery? Get a premium replacement with warranty.",
-      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1512439408685-2e399291a4e6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEJhdHRlcnklMjByZXBsYWNlbWVudHxlbnwwfHwwfHx8MA%3D%3D",
       price: "Starts from $15"
     },
     {
       id: 3,
       title: "Charging Port Repair",
       description: "Fix loose or non-functional charging ports instantly.",
-      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1774137909186-3fe3ae3ddc08?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hhcmdpbmclMjBwb3J0fGVufDB8fDB8fHww",
       price: "Starts from $10"
     },
     {
       id: 4,
       title: "Water Damage Repair",
       description: "Professional cleaning and component-level repair for liquid damage.",
-      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=400",
+      image: "https://plus.unsplash.com/premium_photo-1663047430590-f2947119c3f0?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGhvbmUlMjByZXBhaXJ8ZW58MHx8MHx8fDA%3D",
       price: "Free Diagnosis"
     }
+    
   ],
 
   // Accessories Shop Section
@@ -60,28 +64,28 @@ export const siteData = {
       name: "Fast Charging Adapter",
       category: "Power",
       price: "$12.99",
-      image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1731616103600-3fe7ccdc5a59?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9iaWxlJTIwZmFzdCUyMGNoYXJnaW5nJTIwYWRhcHRlcnxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       id: 2,
       name: "Premium Leather Case",
       category: "Protection",
       price: "$9.50",
-      image: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1625102216615-3a61ee26e4db?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1vYmlsZSUyMGNhc2V8ZW58MHx8MHx8fDA%3D",
     },
     {
       id: 3,
       name: "Wireless Bluetooth Earbuds",
       category: "Audio",
       price: "$25.00",
-      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2lyZWxlc3MlMjBlYXJidWRzfGVufDB8fDB8fHww",
     },
     {
       id: 4,
       name: "9D Tempered Glass",
       category: "Protection",
-      price: "$4.99",
-      image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=400",
+      price: "Rs. 200",
+      image: "https://plus.unsplash.com/premium_photo-1664201890589-6ee3c8367a27?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9iaWxlJTIwZ2xhc3N8ZW58MHx8MHx8fDA%3D",
     }
   ],
 
