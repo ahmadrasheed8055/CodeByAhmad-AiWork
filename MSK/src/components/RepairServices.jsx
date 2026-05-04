@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight, FaTools } from 'react-icons/fa';
 import { siteData } from '../data/siteData';
 import '../styles/RepairServices.css';
@@ -7,6 +7,10 @@ const RepairServices = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3);
   const services = siteData.repairServices;
+
+  // Touch swipe refs
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
 
   useEffect(() => {
     const updateItemsToShow = () => {
@@ -29,6 +33,28 @@ const RepairServices = () => {
     setCurrentIndex(prev => (prev <= 0 ? maxIndex : prev - 1));
   };
 
+  // Swipe handlers
+  const handleTouchStart = (e) => {
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
+
+    touchStart.current = 0;
+    touchEnd.current = 0;
+  };
+
   return (
     <section id="repairs" className="repair-services">
       <div className="container">
@@ -40,7 +66,12 @@ const RepairServices = () => {
         <div className="services-slider-container">
           <button className="slider-btn prev" onClick={prevSlide}><FaChevronLeft /></button>
 
-          <div className="services-viewport">
+          <div 
+            className="services-viewport"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div 
               className="services-track" 
               style={{ 
