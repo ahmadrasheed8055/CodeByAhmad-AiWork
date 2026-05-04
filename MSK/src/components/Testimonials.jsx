@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { siteData } from '../data/siteData';
 import '../styles/Testimonials.css';
@@ -7,12 +7,38 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const reviews = siteData.reviews;
 
+  // Touch swipe refs
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+  };
+
+  // Swipe handlers
+  const handleTouchStart = (e) => {
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
+
+    touchStart.current = 0;
+    touchEnd.current = 0;
   };
 
   return (
@@ -28,7 +54,12 @@ const Testimonials = () => {
             <FaChevronLeft />
           </button>
           
-          <div className="testimonial-slider">
+          <div 
+            className="testimonial-slider"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div 
               className="testimonial-track" 
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}

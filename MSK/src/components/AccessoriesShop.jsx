@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight, FaShoppingCart } from 'react-icons/fa';
 import { siteData } from '../data/siteData';
 import '../styles/AccessoriesShop.css';
@@ -7,6 +7,10 @@ const AccessoriesShop = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3);
   const products = siteData.accessories;
+  
+  // Touch swipe refs
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
 
   useEffect(() => {
     const updateItemsToShow = () => {
@@ -29,6 +33,35 @@ const AccessoriesShop = () => {
     setCurrentIndex(prev => (prev <= 0 ? maxIndex : prev - 1));
   };
 
+  // Swipe handlers
+  const handleTouchStart = (e) => {
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
+
+    touchStart.current = 0;
+    touchEnd.current = 0;
+  };
+
+  const handleBuyNow = (product) => {
+    const phoneNumber = siteData.contact.phone.replace(/\s+/g, '');
+    const message = `Hello MSK! I am interested in buying: ${product.name} (${product.price}). Please let me know the details.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="accessories" className="accessories-shop">
       <div className="container">
@@ -40,7 +73,12 @@ const AccessoriesShop = () => {
         <div className="accessories-slider-container">
           <button className="slider-btn prev" onClick={prevSlide}><FaChevronLeft /></button>
 
-          <div className="accessories-viewport">
+          <div 
+            className="accessories-viewport"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div 
               className="accessories-track" 
               style={{ 
@@ -58,7 +96,7 @@ const AccessoriesShop = () => {
                       <h3>{item.name}</h3>
                       <div className="product-action-row">
                         <span className="product-price-tag">{item.price}</span>
-                        <button className="add-to-cart-btn">
+                        <button className="add-to-cart-btn" onClick={() => handleBuyNow(item)}>
                           <FaShoppingCart /> Buy Now
                         </button>
                       </div>

@@ -31,7 +31,6 @@ function App() {
           </p>
           <p style={{ fontSize: '0.9rem', opacity: 0.5 }}>
             &copy; {new Date().getFullYear()} MSK Mobile Store. All rights reserved.
-            Owner & Operator: Muhammed Salman 
           </p>
           <p>Owner & Operator: Muhammed Salman </p>
         </div>
