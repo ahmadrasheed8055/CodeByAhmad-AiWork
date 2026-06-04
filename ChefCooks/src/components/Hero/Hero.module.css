@@ -1,0 +1,144 @@
+.hero {
+  background-color: var(--primary-yellow);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.content {
+  flex: 1;
+  z-index: 2;
+}
+
+.tagline {
+  font-size: 24px;
+  font-style: italic;
+  color: var(--secondary-black);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.1;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.yellowText {
+  color: var(--secondary-black);
+}
+
+.blackText {
+  color: var(--secondary-black);
+  text-decoration: line-through;
+  text-decoration-color: var(--text-white);
+}
+
+.ctaBtn {
+  background-color: var(--secondary-black);
+  color: var(--primary-yellow);
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 30px;
+  transition: var(--transition);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-5px);
+  background-color: #333;
+}
+
+.imageContainer {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.heroImg {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+  transition: transform 0.5s ease;
+}
+
+.heroImg:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.decor1, .decor2, .decor3 {
+  position: absolute;
+  font-size: 40px;
+  pointer-events: none;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.decor1 { top: 10%; left: 5%; animation-delay: 0s; }
+.decor2 { bottom: 15%; left: 10%; animation-delay: 2s; }
+.decor3 { top: 20%; right: 10%; animation-delay: 4s; }
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 40px 0;
+    min-height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 48px;
+  }
+  
+  .heroImg {
+    max-width: 400px;
+    margin-top: 30px;
+  }
+
+  .tagline {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 32px;
+  }
+  
+  .ctaBtn {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .heroImg {
+    max-width: 300px;
+  }
+
+  .decor1, .decor2, .decor3 {
+    font-size: 30px;
+  }
+}

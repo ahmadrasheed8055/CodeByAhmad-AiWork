@@ -1,0 +1,44 @@
+:root {
+  --primary-yellow: #FFD700;
+  --secondary-black: #1a1a1a;
+  --text-white: #ffffff;
+  --text-black: #333333;
+  --bg-white: #ffffff;
+  --bg-light: #f9f9f9;
+  --font-family: 'Poppins', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-white);
+  color: var(--text-black);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
