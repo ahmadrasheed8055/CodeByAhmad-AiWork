@@ -1,21 +1,40 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { siteData } from '../data/siteData';
+import { supabase } from '../supabaseClient';
 import '../styles/Testimonials.css';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const reviews = siteData.reviews;
+  const [reviews, setReviews] = useState([]);
 
   // Touch swipe refs
   const touchStart = useRef(0);
   const touchEnd = useRef(0);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('reviews')
+          .select('*')
+          .order('id', { ascending: true });
+        
+        if (error) throw error;
+        setReviews(data || []);
+      } catch (err) {
+        console.error('Error fetching reviews:', err);
+      }
+    };
+    fetchData();
+  }, []);
+
   const nextSlide = () => {
+    if (reviews.length === 0) return;
     setCurrentIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
+    if (reviews.length === 0) return;
     setCurrentIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
   };
 
@@ -41,6 +60,8 @@ const Testimonials = () => {
     touchEnd.current = 0;
   };
 
+  if (reviews.length === 0) return null;
+
   return (
     <section id="reviews" className="testimonials">
       <div className="container">
@@ -64,16 +85,16 @@ const Testimonials = () => {
               className="testimonial-track" 
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {reviews.map((review) => (
+              {reviews.filter(r => r && r.user).map((review) => (
                 <div key={review.id} className="review-slide">
                   <div className="review-card">
                     <FaQuoteLeft className="quote-icon" />
                     <div className="rating">
-                      {[...Array(review.rating)].map((_, i) => (
+                      {[...Array(parseInt(review.rating) || 5)].map((_, i) => (
                         <FaStar key={i} className="star-icon" />
                       ))}
                     </div>
-                    <p className="comment">"{review.comment}"</p>
+                    <p className="comment">"{review.comment || 'No comment provided'}"</p>
                     <div className="user-info">
                       <h4>{review.user}</h4>
                       <span>{review.date}</span>
