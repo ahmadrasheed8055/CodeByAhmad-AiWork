@@ -1,18 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight, FaTools } from 'react-icons/fa';
-import { siteData } from '../data/siteData';
+import { supabase } from '../supabaseClient';
 import '../styles/RepairServices.css';
 
 const RepairServices = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3);
-  const services = siteData.repairServices;
+  const [services, setServices] = useState([]);
 
   // Touch swipe refs
   const touchStart = useRef(0);
   const touchEnd = useRef(0);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('repairServices')
+          .select('*')
+          .order('id', { ascending: true });
+        
+        if (error) throw error;
+        setServices(data || []);
+      } catch (err) {
+        console.error('Error fetching services:', err);
+      }
+    };
+    fetchData();
+
     const updateItemsToShow = () => {
       if (window.innerWidth < 640) setItemsToShow(1);
       else if (window.innerWidth < 1024) setItemsToShow(2);
@@ -23,7 +38,7 @@ const RepairServices = () => {
     return () => window.removeEventListener('resize', updateItemsToShow);
   }, []);
 
-  const maxIndex = Math.max(0, services.length - itemsToShow);
+  const maxIndex = services.length > 0 ? Math.max(0, services.length - itemsToShow) : 0;
 
   const nextSlide = () => {
     setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
@@ -55,6 +70,8 @@ const RepairServices = () => {
     touchEnd.current = 0;
   };
 
+  if (services.length === 0) return null;
+
   return (
     <section id="repairs" className="repair-services">
       <div className="container">
@@ -78,11 +95,14 @@ const RepairServices = () => {
                 transform: `translateX(calc(-1 * ${currentIndex} * (100% / ${itemsToShow})))`
               }}
             >
-              {services.map((service) => (
+              {services.filter(s => s && s.image).map((service) => (
                 <div key={service.id} className="service-slide" style={{ flex: `0 0 calc(100% / ${itemsToShow})` }}>
                   <div className="service-card-premium">
                     <div className="service-image-container">
-                      <img src={service.image} alt={service.title} />
+                      <img 
+                        src={service.image} 
+                        alt={service.title || 'Service'} 
+                      />
                       <div className="price-tag-floating">{service.price}</div>
                     </div>
                     <div className="service-info-premium">
