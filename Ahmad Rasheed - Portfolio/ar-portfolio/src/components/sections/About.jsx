@@ -1,4 +1,4 @@
-import { Layout, Smartphone, Code2, Globe } from 'lucide-react';
+import { Layout, Smartphone, Code2, Globe, Terminal } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const About = () => {
@@ -12,6 +12,11 @@ const About = () => {
       title: "Backend Engineering",
       desc: "Designing and implementing secure RESTful APIs and complex business logic.",
       icon: <Code2 className="text-accent" size={40} />
+    },
+    {
+      title: "AI Automation",
+      desc: "Building smart CLI tools and integrating LLMs using modern AI-driven development.",
+      icon: <Terminal className="text-accent" size={40} />
     },
     {
       title: "Database Management",
@@ -55,10 +60,15 @@ const About = () => {
         <h3 className="text-2xl font-semibold">What I'm Doing</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="glass-card p-6 flex gap-5 shadow-sm">
-              <div className="shrink-0">{service.icon}</div>
-              <div>
-                <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
+            <div 
+              key={index} 
+              className="glass-card p-6 flex items-start gap-5 shadow-sm hover:border-accent/30 transition-all duration-300 group h-full"
+            >
+              <div className="shrink-0 p-3 bg-bg-body rounded-xl group-hover:bg-accent/5 transition-colors">
+                {service.icon}
+              </div>
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold leading-tight">{service.title}</h4>
                 <p className="text-sm text-text-secondary leading-relaxed">{service.desc}</p>
               </div>
             </div>
