@@ -103,7 +103,11 @@ const RepairServices = () => {
                         src={service.image} 
                         alt={service.title || 'Service'} 
                       />
-                      <div className="price-tag-floating">{service.price}</div>
+                      <div className="price-tag-floating">
+                        {service.price?.toString().toLowerCase().includes('rs') 
+                          ? service.price 
+                          : `Rs. ${service.price}`}
+                      </div>
                     </div>
                     <div className="service-info-premium">
                       <div className="service-icon-box"><FaTools /></div>

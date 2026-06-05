@@ -116,7 +116,11 @@ const AccessoriesShop = () => {
                     <div className="product-details-premium">
                       <h3>{item.name}</h3>
                       <div className="product-action-row">
-                        <span className="product-price-tag">{item.price}</span>
+                        <span className="product-price-tag">
+                          {item.price?.toString().toLowerCase().includes('rs') 
+                            ? item.price 
+                            : `Rs. ${item.price}`}
+                        </span>
                         <button className="add-to-cart-btn" onClick={() => handleBuyNow(item)}>
                           <FaShoppingCart /> Buy Now
                         </button>
