@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Smartphone, MapPin, Globe, ChevronDown, Linkedin, Github, FileText } from 'lucide-react';
+import profileImg from '../../assets/Ahmad-Profile.jpg';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Sidebar = () => {
       {/* Profile Info */}
       <div className="flex flex-row lg:flex-col items-center lg:text-center w-full relative">
         <div className="w-20 h-20 lg:w-32 lg:h-32 bg-border-primary rounded-2xl lg:rounded-3xl overflow-hidden mb-0 lg:mb-5 shrink-0">
-            <img src="/src/assets/ahmad-profile.jpg" alt="Ahmad Rasheed" className="w-full h-full object-cover" />
+            <img src={profileImg} alt="Ahmad Rasheed" className="w-full h-full object-cover" />
         </div>
         <div className="ml-5 lg:ml-0 flex-1">
           <h1 className="text-xl lg:text-2xl font-semibold mb-2 tracking-tight">Ahmad Rasheed</h1>
