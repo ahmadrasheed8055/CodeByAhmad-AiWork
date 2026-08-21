@@ -1,37 +1,42 @@
-import { BookOpen, Briefcase, ExternalLink } from 'lucide-react';
+import { BookOpen, Briefcase, ExternalLink, Github } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 const Resume = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const categories = ['All', 'Angular', 'ASP.NET Core', 'PHP', 'AI & CLI Tools','React'];
+  const categories = ['All', 'React', 'Angular', 'ASP.NET Core', 'PHP', 'AI & CLI Tools'];
 
   const projectsData = [
     {
-      title: "FitMind - Full-Stack Fitness Forum",
-      period: "Feb 2025 — Present",
-      desc: "Developed a full-stack fitness forum using Angular and ASP.NET Core Web API. Engineered secure Two-Step Email Authentication and integrated AI-based content moderation.",
-      tags: ["Angular", "ASP.NET Core"]
+      title: "Fancy Tailor — Tailoring & Order Management System",
+      period: "Jan 2025 — Present",
+      desc: "A full-stack custom tailoring management platform digitizing measurement tracking, customer order workflows, dynamic measurement forms, and automated billing management.",
+      tags: ["React", "PHP", "Full-Stack"],
+      link: "https://fancyts.online",
+      githubLink: "https://github.com/ahmadrasheed8055/Fancy-Tailor"
     },
     {
-      title: "MSK Mobile store - AI Based Store",
+      title: "FitJoin — Full-Stack Fitness Forum",
+      period: "Feb 2025 — Present",
+      desc: "Developed a full-stack fitness forum using Angular and ASP.NET Core Web API. Engineered secure Two-Step Email Authentication and integrated AI-based content moderation.",
+      tags: ["Angular", "ASP.NET Core"],
+      githubLink: "https://github.com/ahmadrasheed8055/FitJoin"
+    },
+    {
+      title: "MSK Mobile Store — AI Based Store",
       period: "July 2024",
       desc: "An AI-powered mobile store built with React Vite and Supabase. Features intelligent product search and real-time inventory. Developed completely using Gemini CLI.",
       tags: ["React", "AI & CLI Tools"],
-      link: "https://msk-store.vercel.app"
+      link: "https://msk-store.vercel.app/",
+      githubLink: "https://github.com/ahmadrasheed8055/MSK"
     },
     {
-      title: "Fancy Tailor - Management System",
-      period: "Feb 2024 — March 2024",
-      desc: "Digitized traditional tailoring records into a full-stack PHP-based management system. Developed a Dynamic Form Engine for custom measurement fields.",
-      tags: ["PHP"]
-    },
-    {
-      title: "VotVision - Online Voting Platform",
+      title: "VotVision — Online Voting Platform",
       period: "Oct 2023 — Jan 2024",
       desc: "Implemented a secure full-stack online voting platform with Authorization based panels. Features real-time result tracking using PHP and MySQL.",
-      tags: ["PHP"]
+      tags: ["PHP"],
+      githubLink: "https://github.com/ahmadrasheed8055/VotVision"
     }
   ];
 
@@ -96,6 +101,7 @@ const Resume = () => {
                   period={project.period}
                   desc={project.desc}
                   link={project.link}
+                  githubLink={project.githubLink}
                 />
               </motion.div>
             ))}
@@ -120,21 +126,34 @@ const Resume = () => {
   );
 };
 
-const TimelineItem = ({ title, period, desc, link }) => (
+const TimelineItem = ({ title, period, desc, link, githubLink }) => (
   <div className="relative pl-10 before:content-[''] before:absolute before:left-[-5px] before:top-2 before:w-2.5 before:h-2.5 before:bg-accent before:rounded-full before:shadow-[0_0_0_4px_rgba(255,219,112,0.15)]">
-    <div className="flex items-center gap-3 mb-1">
+    <div className="flex flex-wrap items-center gap-3 mb-1">
       <h4 className="text-lg font-semibold">{title}</h4>
-      {link && (
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-text-secondary hover:text-accent transition-colors"
-          title="View Live"
-        >
-          <ExternalLink size={16} />
-        </a>
-      )}
+      <div className="flex items-center gap-2">
+        {githubLink && (
+          <a 
+            href={githubLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-text-secondary hover:text-accent transition-colors"
+            title="View Code Repository"
+          >
+            <Github size={16} />
+          </a>
+        )}
+        {link && (
+          <a 
+            href={link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-text-secondary hover:text-accent transition-colors"
+            title="View Live Demo"
+          >
+            <ExternalLink size={16} />
+          </a>
+        )}
+      </div>
     </div>
     <p className="text-accent text-sm font-medium mb-3">{period}</p>
     <p className="text-text-secondary text-sm leading-relaxed">{desc}</p>
