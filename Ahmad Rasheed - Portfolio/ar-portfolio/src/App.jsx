@@ -27,18 +27,18 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen bg-bg-body py-8 px-4 sm:px-8 lg:py-16">
-      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-8 relative items-start">
+    <main className="min-h-screen bg-bg-body py-6 sm:py-10 lg:py-14 px-4 sm:px-8 xl:px-12 flex flex-col justify-center items-center">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8 relative items-stretch">
         {/* Left Sidebar */}
         <Sidebar />
 
         {/* Right Content Area */}
-        <div className="flex-1 w-full glass-card min-h-[500px] lg:min-h-[700px] relative p-8 lg:p-12 mb-20 lg:mb-0">
+        <div className="flex-1 w-full glass-card min-h-[550px] lg:min-h-[700px] relative p-6 sm:p-10 lg:p-12 flex flex-col justify-between mb-20 lg:mb-0">
           {/* Navigation */}
           <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
           {/* Dynamic Content */}
-          <div className="mt-8 lg:mt-0">
+          <div className="mt-8 lg:mt-4 flex-1">
             <AnimatePresence mode="wait">
               {renderSection()}
             </AnimatePresence>
